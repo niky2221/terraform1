@@ -1,8 +1,11 @@
 resource "aws_instance" "this" {
+  count                  = 3
   ami                    = var.ami_id # This is our devops-practice AMI ID
   vpc_security_group_ids = [aws_security_group.allow_tls.id]
   instance_type          = var.instance_type
-  tags = var.ec2_tag
+  tags = {
+    Name = var.instances[count.index]
+  }
 }
 
 resource "aws_security_group" "allow_tls" {
