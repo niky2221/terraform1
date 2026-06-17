@@ -1,5 +1,5 @@
 resource "aws_instance" "expense" {
-  count = 3
+  count = length(var.instances)
   ami                    = "ami-0220d79f3f480ecf5" # This is our devops-practice AMI ID
   vpc_security_group_ids = [aws_security_group.allow_tls.id]
   instance_type          = "t3.micro"
