@@ -22,12 +22,17 @@ variable "ingress_ports" {
     ]
 }
 
-variable "zone_id" {
-    default = "Z05818272ZT7Y387ZB6VY"
+# variable "zone_id" {
+#     default = "Z05818272ZT7Y387ZB6VY"
   
-}
+# }
 
-variable "domain_name" {
-    default = "expense94.online"
+# variable "domain_name" {
+#     default = "expense94.online"
+  
+# }
+
+variable "instances" {
+    default = ["nginx-1", "nginx-2"]
   
 }
